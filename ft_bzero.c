@@ -6,11 +6,11 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:03:35 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/23 17:47:21 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/23 18:32:48 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

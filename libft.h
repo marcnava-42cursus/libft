@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:37:06 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/23 17:47:03 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/23 19:21:50 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,17 @@ int		ft_toupper(int c);
 
 /* Convert uppercase to lowercase */
 int		ft_tolower(int c);
+
+/* Returns a pointer to the first occurrence of c in s */
+char	*ft_strchr(const char *s, int c);
+
+/* Returns a pointer to the last occurrence of c in s */
+char	*ft_strrchr(const char *s, int c);
+
+/* Compares two strings, compares the first n bits */
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+
+/* Find the ocurrence of c in s on the first n bits */
+void	*ft_memchr(const void *s, int c, size_t n);
 
 #endif

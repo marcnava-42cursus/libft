@@ -6,11 +6,11 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:24:55 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/23 14:28:10 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/23 18:33:24 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

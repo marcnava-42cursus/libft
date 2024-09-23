@@ -6,7 +6,7 @@
 #    By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/23 12:37:21 by marcnava          #+#    #+#              #
-#    Updated: 2024/09/23 18:24:06 by marcnava         ###   ########.fr        #
+#    Updated: 2024/09/23 18:33:54 by marcnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ bonus: all $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
 
 %.o: %.c
-		$(CC) $(CFLAGS) -c $< -o %@
+		$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 		$(RM) $(OBJECTS)
