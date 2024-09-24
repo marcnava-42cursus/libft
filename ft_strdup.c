@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 12:54:49 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/24 16:58:49 by marcnava         ###   ########.fr       */
+/*   Created: 2024/09/24 18:14:18 by marcnava          #+#    #+#             */
+/*   Updated: 2024/09/24 18:14:25 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+char	*ft_strdup(const char *s)
 {
-	return (c >= '0' && c <= '9');
+	char	*str;
+	size_t	len;
+
+	len = ft_strlen(s) + 1;
+	str = (char *)malloc(len);
+	if (!str)
+		return (NULL);
+	ft_memcpy(str, s, len);
+	return (str);
 }

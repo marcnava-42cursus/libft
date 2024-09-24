@@ -6,21 +6,21 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 19:18:26 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/23 20:01:36 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/24 16:19:00 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
 
 	i = 0;
 	while (i < n)
 	{
-		if (s + i == c)
-			return (s + i);
+		if (*((unsigned char *)s + i) == (unsigned char)c)
+			return ((void *)s + i);
 		i++;
 	}
 	return (0);
