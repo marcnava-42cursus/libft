@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:37:06 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/24 18:42:39 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/25 10:22:06 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,8 @@ or NULL if allocation fails. */
 char	*ft_strdup(const char *s1);
 
 /* PART 2 - ADITIONAL FUNCTIONS */
+/* Creates a new string from a substring of 's' starting at 'start'
+up to 'len' characters. */
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
