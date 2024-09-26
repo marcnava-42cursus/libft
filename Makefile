@@ -1,16 +1,14 @@
-# *************************************************************************** #
-#		MESSAGES  #
-# define TITLE
-# __/\\\\\\___________/\\\_______________/\\\\\_______________        
-#  _\////\\\__________\/\\\_____________/\\\///________________       
-#   ____\/\\\_____/\\\_\/\\\____________/\\\__________/\\\______      
-#    ____\/\\\____\///__\/\\\_________/\\\\\\\\\____/\\\\\\\\\\\_     
-#     ____\/\\\_____/\\\_\/\\\\\\\\\__\////\\\//____\////\\\////__    
-#      ____\/\\\____\/\\\_\/\\\////\\\____\/\\\_________\/\\\______   
-#       ____\/\\\____\/\\\_\/\\\__\/\\\____\/\\\_________\/\\\_/\\__  
-#        __/\\\\\\\\\_\/\\\_\/\\\\\\\\\_____\/\\\_________\//\\\\\___ 
-#         _\/////////__\///__\/////////______\///___________\/////____
-# endef
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/09/26 17:33:23 by marcnava          #+#    #+#              #
+#    Updated: 2024/09/26 19:57:29 by marcnava         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NAME =			libft.a
 
@@ -42,10 +40,18 @@ RANDOM_COLOR =	$(shell shuf -e "$(BLA)" "$(RED)" "$(GRE)" "$(YEL)" "$(BLU)" \
 				"$(MAG)" "$(CYA)" "$(WHI)" -n 1)
 
 # *************************************************************************** #
-#	  PATHS   #
+#		PATHS   	#
 
 OBJSPATH =		./build/
 SRCSPATH =		./
+
+# *************************************************************************** #
+#		MESSAGES	#
+
+UP_TO_DATE =	$(NAME) up to date! No relink made ( ͡° ͜ʖ ͡°)
+COMPILED =		$(NAME) compiled successfully!
+RM_OBJ =		Removed $(OBJSPATH)
+RM_NAME =		Removed $(NAME)
 
 # *************************************************************************** #
 
@@ -86,15 +92,15 @@ SRCS =			\
 				ft_putnbr_fd.c
 
 SRCS_BONUS =	\
-				ft_lstnew.c \
-				ft_lstadd_front.c \
-				ft_lstsize.c \
-				ft_lstlast.c \
-				ft_lstadd_back.c \
-				ft_lstdelone.c \
-				ft_lstclear.c \
-				ft_lstiter.c \
-				ft_lstmap.c
+				ft_lstnew_bonus.c \
+				ft_lstadd_front_bonus.c \
+				ft_lstsize_bonus.c \
+				ft_lstlast_bonus.c \
+				ft_lstadd_back_bonus.c \
+				ft_lstdelone_bonus.c \
+				ft_lstclear_bonus.c \
+				ft_lstiter_bonus.c \
+				ft_lstmap_bonus.c
 
 OBJS =			$(SRCS:%.c=$(OBJSPATH)%.o)
 OBJS_BONUS =	$(SRCS_BONUS:%.c=$(OBJSPATH)%.o)
@@ -102,12 +108,15 @@ OBJS_BONUS =	$(SRCS_BONUS:%.c=$(OBJSPATH)%.o)
 # *************************************************************************** #
 
 define progress_bar
-				@i=0
-				@while [[ $$i -le $(words $(SRCS)) ]] ; do \
-						printf " " ; \
-						((i = i + 1)) ; \
-				done
-				@printf "$(B)]\r[$(RANDOM_COLOR)"
+				@total=$(words $(SRCS)); \
+				i=0; \
+				printf "["; \
+				while [[ $$i -lt $$total ]]; do \
+					printf " "; \
+					((i = i + 1)); \
+				done; \
+				printf "]\r["; \
+				printf "$(RANDOM_COLOR)";
 endef
 
 # *************************************************************************** #
@@ -115,26 +124,44 @@ endef
 
 all: 			clearscreen check_up_to_date $(NAME)
 
+bonus:			.bonus
+
+.bonus:			launch $(OBJS_BONUS)
+				@ar rc $(NAME) $(OBJS_BONUS)
+				@ranlib $(NAME)
+				@touch .bonus
+				@printf "\n$(B)$(RANDOM_COLOR)$(COMPILED)$(D)\n"
+
+clean:			clearscreen
+				@$(RM) $(OBJSPATH)
+				$(RM) .bonus
+				$(MAKE) print_title
+				@printf "$(B)$(RANDOM_COLOR)$(RM_OBJ)$(D)\n"
+
+fclean:			clean
+				@$(RM) $(NAME)
+				@printf "$(B)$(RANDOM_COLOR)$(RM_NAME)$(D)\n"
+
+re:				fclean all
+
 check_up_to_date:
-				@echo "$$TITLE"; \
 				if $(MAKE) --question $(NAME); then \
-					printf "$(B)$(RANDOM_COLOR)$(NAME) up to date! No relink made ( ͡° ͜ʖ ͡°)$(D)\n"; \
+					$(MAKE) print_title; \
+					printf "$(B)$(RANDOM_COLOR)$(UP_TO_DATE)$(D)\n"; \
 				else \
 					$(MAKE) clearscreen; \
 					$(MAKE) launch; \
 					$(MAKE) $(NAME); \
 					$(MAKE) clearscreen; \
-					printf "$(B)$(RANDOM_COLOR)$(NAME) compiled successfully !$(D)\n"; \
+					$(MAKE) print_title; \
+					printf "$(B)$(RANDOM_COLOR)$(COMPILED)$(D)\n"; \
 				fi
-
-launch:
-				$(call progress_bar)
 
 $(NAME):		$(OBJS)
 				@ar rc $(NAME) $(OBJS)
 				@ranlib $(NAME)
 
-$(OBJSPATH)%.o:	%.c | $(OBJSPATH)
+$(OBJSPATH)%.o:	$(SRCSPATH)%.c | $(OBJSPATH)
 				$(CC) $(CFLAGS) -c $< -o $@
 				@printf "█"
 
@@ -144,23 +171,18 @@ $(OBJSPATH):
 clearscreen:
 				@clear
 
-bonus:			.bonus
+print_title:
+				@printf "%s\n" \
+				"$(B)$(GRE)" \
+				" __    __    ______    __  __    ______    ______   __    __        ______    " \
+				"/\ \"-./  \  /\  __ \  /\ \/ /   /\  ___\  /\  ___\ /\ \  /\ \      /\  ___\  " \
+				"\ \ \-./\ \ \ \  __ \ \ \  _\"-. \ \  __\  \ \  __\ \ \ \ \ \ \____ \ \  __\  " \
+				" \ \_\ \ \_\ \ \_\ \_\ \ \_\ \_\ \ \_____\ \ \_\    \ \_\ \ \_____\ \ \_____\ " \
+				"  \/_/  \/_/  \/_/\/_/  \/_/\/_/  \/_____/  \/_/     \/_/  \/_____/  \/_____/ " \
+				"$(D)"
 
-.bonus:			launch $(OBJS_BONUS)
-				@ar rc $(NAME) $(OBJS_BONUS)
-				@ranlib $(NAME)
-				@touch .bonus
-				@printf "\n$(B)$(RANDOM_COLOR)$(NAME) compiled successfully !$(D)\n"
-
-clean:			clearscreen
-				@$(RM) $(OBJSPATH)
-				$(RM) .bonus
-				@printf "$(B)$(RANDOM_COLOR)Removed $(OBJSPATH)$(D)\n"
-
-fclean:			clean
-				@$(RM) $(NAME)
-				@printf "$(B)$(RANDOM_COLOR)Removed $(NAME)$(D)\n"
-
-re:				fclean all
+launch:
+				$(MAKE) print_title
+				$(call progress_bar)
 
 .PHONY:			all clean fclean re launch bonus clearscreen check_up_to_date
