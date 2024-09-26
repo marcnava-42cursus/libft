@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:37:06 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/25 10:22:06 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/26 15:40:04 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 /* PART 1 - FUNCTIONS OF LIBC */
 /* Checks if c is alphabetic */
@@ -100,32 +101,83 @@ char	*ft_strdup(const char *s1);
 /* Creates a new string from a substring of 's' starting at 'start'
 up to 'len' characters. */
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+/* Creates a new string that is the result
+of the concatenation of 's1' and 's2'. */
 char	*ft_strjoin(char const *s1, char const *s2);
+
+/* Creates a new string with the characters of 's' that are in 'set'
+removed from the beginning and the end. */
 char	*ft_strtrim(char const *s1, char const *set);
+
+/* Creates an array of strings obtained by splitting 's'
+using 'c' as a delimiter. */
 char	**ft_split(char const *s, char c);
+
+/* Creates a new string with the result of applying 'f'
+to each character of 's'. */
 char	*ft_itoa(int n);
+
+/* Applies the function 'f' to each character of the string 's'
+to create a new string. */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+/* Applies 'f' to each char of 's', passing char's index and pointer. */
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+/* Allocates (with malloc(3)) and returns a new element. */
 void	ft_putchar_fd(char c, int fd);
+
+/* Outputs the string 's' to the given file descriptor. */
 void	ft_putstr_fd(char *s, int fd);
+
+/* Outputs the string 's' to the given file descriptor,
+followed by a newline. */
 void	ft_putendl_fd(char *s, int fd);
+
+/* Outputs the integer 'n' to the given file descriptor. */
 void	ft_putnbr_fd(int n, int fd);
 
 /* BONUS PART */
+/* Structure for linked list */
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
 
+/* Allocates and returns a new element.
+The variable 'content' is initialized with the value
+of the parameter 'content'. */
 t_list	*ft_lstnew(void *content);
+
+/* Adds the element 'new' at the beginning of the list. */
 void	ft_lstadd_front(t_list **lst, t_list *new);
+
+/* Counts the number of elements in a list. */
 int		ft_lstsize(t_list *lst);
+
+/* Returns the last element of the list. */
 t_list	*ft_lstlast(t_list *lst);
+
+/* Adds the element 'new' at the end of the list. */
 void	ft_lstadd_back(t_list **lst, t_list *new);
+
+/* Takes as a parameter an element and frees the memory
+of the element's content using the function 'del' given as a parameter
+and free the element. */
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
+
+/* Deletes and frees the given element and every successor of that element,
+using the function 'del' and free. */
 void	ft_lstclear(t_list **lst, void (*del)(void*));
+
+/* Iterates the list 'lst' and applies the function 'f'
+to the content of each element. */
 void	ft_lstiter(t_list *lst, void (*f)(void *));
+
+/* Iterates the list 'lst' and applies the function 'f'
+to the content of each element. */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

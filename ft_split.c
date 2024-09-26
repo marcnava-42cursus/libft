@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 18:14:18 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/25 16:48:20 by marcnava         ###   ########.fr       */
+/*   Created: 2024/09/25 11:47:40 by marcnava          #+#    #+#             */
+/*   Updated: 2024/09/25 12:01:40 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	**ft_split(char const *s, char c)
 {
-	char	*str;
-	size_t	len;
+	char	**strs;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
-	len = ft_strlen(s) + 1;
-	str = (char *)malloc(len);
-	if (!str)
+	if (!s)
 		return (NULL);
-	ft_memcpy(str, s, len);
-	return (str);
+	strs = (char **)ft_calloc(ft_strlen(s) + 1, sizeof(char *));
+	if (!strs)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		k = i;
+		while (s[i] && s[i] != c)
+			i++;
+		if (i > k)
+			strs[j++] = ft_substr(s, k, i - k);
+	}
+	return (strs);
 }

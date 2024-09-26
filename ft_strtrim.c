@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 18:14:18 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/25 16:48:20 by marcnava         ###   ########.fr       */
+/*   Created: 2024/09/25 11:15:53 by marcnava          #+#    #+#             */
+/*   Updated: 2024/09/25 11:36:47 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
-	size_t	len;
+	size_t	start;
+	size_t	end;
 
-	len = ft_strlen(s) + 1;
-	str = (char *)malloc(len);
-	if (!str)
+	if (!s1 || !set)
 		return (NULL);
-	ft_memcpy(str, s, len);
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_strchr(set, s1[end - 1]))
+		end--;
+	str = ft_substr(s1, start, end - start);
 	return (str);
 }

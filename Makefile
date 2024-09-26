@@ -1,89 +1,166 @@
-# Info message for make rebuild
-CLEAR_MSG = "Program clean and recompiled"
+# *************************************************************************** #
+#		MESSAGES  #
+# define TITLE
+# __/\\\\\\___________/\\\_______________/\\\\\_______________        
+#  _\////\\\__________\/\\\_____________/\\\///________________       
+#   ____\/\\\_____/\\\_\/\\\____________/\\\__________/\\\______      
+#    ____\/\\\____\///__\/\\\_________/\\\\\\\\\____/\\\\\\\\\\\_     
+#     ____\/\\\_____/\\\_\/\\\\\\\\\__\////\\\//____\////\\\////__    
+#      ____\/\\\____\/\\\_\/\\\////\\\____\/\\\_________\/\\\______   
+#       ____\/\\\____\/\\\_\/\\\__\/\\\____\/\\\_________\/\\\_/\\__  
+#        __/\\\\\\\\\_\/\\\_\/\\\\\\\\\_____\/\\\_________\//\\\\\___ 
+#         _\/////////__\///__\/////////______\///___________\/////____
+# endef
 
-# This will be the name of the executable file
-NAME = libft.a
+NAME =			libft.a
 
-## This specify the path to diferent folders:
-# Folder to source files (.c)
-# SRC_DIR = src
-# Folder to build files (.o)
-BUILD_DIR = build
-# Folder to includes (.h)
-# INCLUDE_DIR = include
+CC =			gcc
+RM =			rm -rf
 
-# This lists all files from the sources files folder
-SRCS = \
-	ft_isalpha.c \
-	ft_isdigit.c \
-	ft_isalnum.c \
-	ft_isascii.c \
-	ft_isprint.c \
-	ft_strlen.c \
-	ft_memset.c \
-	ft_bzero.c \
-	ft_memcpy.c \
-	ft_memmove.c \
-	ft_strlcpy.c \
-	ft_strlcat.c \
-	ft_toupper.c \
-	ft_tolower.c \
-	ft_strchr.c \
-	ft_strrchr.c \
-	ft_strncmp.c \
-	ft_memchr.c \
-	ft_memcmp.c \
-	ft_strnstr.c \
-	ft_atoi.c \
-	ft_calloc.c \
-	ft_strdup.c \
+CFLAGS =		-Wall -Wextra -Werror
+CFLAGS +=		-g3
+CFLAGS +=		-fsanitize=address
 
-# This lists all object files from source files 
-OBJS = $(SRCS:%.c=$(BUILD_DIR)/%.o)
+MAKEFLAGS +=	--silent
 
-## This are the comilator command and compilation options:
-# This is the compilator command
-CC = cc
-# The flags used by Moulinette, and the header files
-CFLAGS = -Wall -Wextra -Werror #-I $(INCLUDE_DIR)
+SHELL :=		bash
 
-# ----- RULES ----- #
-# This builds the executable file using the target as name, and all object
-#   files (.o). This uses the CC compiler to link all object files and
-#   generate the executable
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
-	ranlib $(NAME)
+B =				$(shell tput bold)
+BLA =			$(shell tput setaf 0)
+RED =			$(shell tput setaf 1)
+GRE =			$(shell tput setaf 2)
+YEL =			$(shell tput setaf 3)
+BLU =			$(shell tput setaf 4)
+MAG =			$(shell tput setaf 5)
+CYA =			$(shell tput setaf 6)
+WHI =			$(shell tput setaf 7)
+D =				$(shell tput sgr0)
+BEL =			$(shell tput bel)
+CLR =			$(shell tput el 1)
 
-# This rule defines how compile source files to object files,
-#   it uses the cc command with flags to compile (-c) the source file ($<)
-#   and generate object files ($@)
-$(BUILD_DIR)/%.o: %.c | $(BUILD_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+RANDOM_COLOR =	$(shell shuf -e "$(BLA)" "$(RED)" "$(GRE)" "$(YEL)" "$(BLU)" \
+				"$(MAG)" "$(CYA)" "$(WHI)" -n 1)
 
-# Rule for the use of make without arguments, updates the executable file
-all: $(NAME)
+# *************************************************************************** #
+#	  PATHS   #
 
-# This generates the build directory if it does not exist.
-#   this is important because the build folder will save all object files
-$(BUILD_DIR):
-	mkdir -p $(BUILD_DIR)
+OBJSPATH =		./build/
+SRCSPATH =		./
 
-# This generates a clean rule to remove all auto-generated build files and
-#   the executable. To use, type the command 'make clean'
-fclean: clean
-	rm -rf $(BUILD_DIR) $(NAME)
-clean:
-	rm -rf $(BUILD_DIR)
+# *************************************************************************** #
 
-# Executes the command make fclean for clean the current workspace and
-#   recompiles everything with make
-re: fclean all
-	clear && echo $(CLEAR_MSG)
+SRCS =			\
+				ft_isalpha.c \
+				ft_isdigit.c \
+				ft_isalnum.c \
+				ft_isascii.c \
+				ft_isprint.c \
+				ft_strlen.c \
+				ft_memset.c \
+				ft_bzero.c \
+				ft_memcpy.c \
+				ft_memmove.c \
+				ft_strlcpy.c \
+				ft_strlcat.c \
+				ft_toupper.c \
+				ft_tolower.c \
+				ft_strchr.c \
+				ft_strrchr.c \
+				ft_strncmp.c \
+				ft_memchr.c \
+				ft_memcmp.c \
+				ft_strnstr.c \
+				ft_atoi.c \
+				ft_calloc.c \
+				ft_strdup.c \
+				ft_substr.c \
+				ft_strjoin.c \
+				ft_strtrim.c \
+				ft_split.c \
+				ft_itoa.c \
+				ft_strmapi.c \
+				ft_striteri.c \
+				ft_putchar_fd.c \
+				ft_putstr_fd.c \
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c
 
-# Makes tests for an easy code
-tests: re
-	clear
-	./$(NAME)
+SRCS_BONUS =	\
+				ft_lstnew.c \
+				ft_lstadd_front.c \
+				ft_lstsize.c \
+				ft_lstlast.c \
+				ft_lstadd_back.c \
+				ft_lstdelone.c \
+				ft_lstclear.c \
+				ft_lstiter.c \
+				ft_lstmap.c
 
-.PHONY: all fclean re tests
+OBJS =			$(SRCS:%.c=$(OBJSPATH)%.o)
+OBJS_BONUS =	$(SRCS_BONUS:%.c=$(OBJSPATH)%.o)
+
+# *************************************************************************** #
+
+define progress_bar
+				@i=0
+				@while [[ $$i -le $(words $(SRCS)) ]] ; do \
+						printf " " ; \
+						((i = i + 1)) ; \
+				done
+				@printf "$(B)]\r[$(RANDOM_COLOR)"
+endef
+
+# *************************************************************************** #
+#       RULES   #
+
+all: 			clearscreen check_up_to_date $(NAME)
+
+check_up_to_date:
+				@echo "$$TITLE"; \
+				if $(MAKE) --question $(NAME); then \
+					printf "$(B)$(RANDOM_COLOR)$(NAME) up to date! No relink made ( ͡° ͜ʖ ͡°)$(D)\n"; \
+				else \
+					$(MAKE) clearscreen; \
+					$(MAKE) launch; \
+					$(MAKE) $(NAME); \
+					$(MAKE) clearscreen; \
+					printf "$(B)$(RANDOM_COLOR)$(NAME) compiled successfully !$(D)\n"; \
+				fi
+
+launch:
+				$(call progress_bar)
+
+$(NAME):		$(OBJS)
+				@ar rc $(NAME) $(OBJS)
+				@ranlib $(NAME)
+
+$(OBJSPATH)%.o:	%.c | $(OBJSPATH)
+				$(CC) $(CFLAGS) -c $< -o $@
+				@printf "█"
+
+$(OBJSPATH):
+				@mkdir -p $(dir $@) # 2> /dev/null || true
+
+clearscreen:
+				@clear
+
+bonus:			.bonus
+
+.bonus:			launch $(OBJS_BONUS)
+				@ar rc $(NAME) $(OBJS_BONUS)
+				@ranlib $(NAME)
+				@touch .bonus
+				@printf "\n$(B)$(RANDOM_COLOR)$(NAME) compiled successfully !$(D)\n"
+
+clean:			clearscreen
+				@$(RM) $(OBJSPATH)
+				$(RM) .bonus
+				@printf "$(B)$(RANDOM_COLOR)Removed $(OBJSPATH)$(D)\n"
+
+fclean:			clean
+				@$(RM) $(NAME)
+				@printf "$(B)$(RANDOM_COLOR)Removed $(NAME)$(D)\n"
+
+re:				fclean all
+
+.PHONY:			all clean fclean re launch bonus clearscreen check_up_to_date
