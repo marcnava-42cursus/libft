@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:47:09 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/24 18:59:34 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/29 17:32:51 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,17 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
+
+// int	main(void)
+// {
+// 	char	*big = "Hello World";
+// 	char	*little = "World";
+// 	char	*ptr;
+
+// 	ptr = ft_strnstr(big, little, 11);
+// 	if (ptr)
+// 		printf("'%s' found at position %ld\n", little, ptr - big);
+// 	else
+// 		printf("'%s' not found\n", little);
+// 	return (0);
+// }

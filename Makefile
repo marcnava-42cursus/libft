@@ -6,24 +6,36 @@
 #    By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/26 17:33:23 by marcnava          #+#    #+#              #
-#    Updated: 2024/09/26 19:57:29 by marcnava         ###   ########.fr        #
+#    Updated: 2024/09/29 16:52:07 by marcnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =			libft.a
+# *************************************************************************** #
+#		VARIABLES	#
 
-CC =			gcc
-RM =			rm -rf
+NAME		=	libft.a
 
-CFLAGS =		-Wall -Wextra -Werror
-CFLAGS +=		-g3
-CFLAGS +=		-fsanitize=address
+CC			=	gcc
+RM			=	rm -rf
 
-MAKEFLAGS +=	--silent
+CFLAGS		=	-Wall -Wextra -Werror
+# Enable debug mode level 3 and address sanitizer for memory leaks
+CFLAGS		+=	-g3
+CFLAGS		+=	-fsanitize=address
 
-SHELL :=		bash
+COMPILER	=	$(CC) $(CFLAGS)
+LIB			=	ar rcs
 
-B =				$(shell tput bold)
+# Silent mode, doesn't print log messages
+MAKEFLAGS	+=	--silent
+
+# Change the shell to bash
+SHELL		:=	bash
+
+# *************************************************************************** #
+#		COLORS		#
+
+B	=			$(shell tput bold)
 BLA =			$(shell tput setaf 0)
 RED =			$(shell tput setaf 1)
 GRE =			$(shell tput setaf 2)
@@ -32,7 +44,7 @@ BLU =			$(shell tput setaf 4)
 MAG =			$(shell tput setaf 5)
 CYA =			$(shell tput setaf 6)
 WHI =			$(shell tput setaf 7)
-D =				$(shell tput sgr0)
+D	=			$(shell tput sgr0)
 BEL =			$(shell tput bel)
 CLR =			$(shell tput el 1)
 
@@ -48,14 +60,17 @@ SRCSPATH =		./
 # *************************************************************************** #
 #		MESSAGES	#
 
-UP_TO_DATE =	$(NAME) up to date! No relink made ( ͡° ͜ʖ ͡°)
-COMPILED =		$(NAME) compiled successfully!
-RM_OBJ =		Removed $(OBJSPATH)
-RM_NAME =		Removed $(NAME)
+UPDATED		=	$(NAME) up to date! No relink made ( ͡° ͜ʖ ͡°)
+UPDATED_B	=	bonus up to date! No relink made ( ͡° ͜ʖ ͡°)
+COMPILED	=	$(NAME) compiled successfully!
+COMPILED_B	=	bonus compiled successfully!
+RM_OBJ		=	Removed $(OBJSPATH)
+RM_NAME		=	Removed $(NAME)
 
 # *************************************************************************** #
+#		FILES		#
 
-SRCS =			\
+SRCS 		=	\
 				ft_isalpha.c \
 				ft_isdigit.c \
 				ft_isalnum.c \
@@ -91,7 +106,7 @@ SRCS =			\
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c
 
-SRCS_BONUS =	\
+SRCS_B		=	\
 				ft_lstnew_bonus.c \
 				ft_lstadd_front_bonus.c \
 				ft_lstsize_bonus.c \
@@ -99,13 +114,13 @@ SRCS_BONUS =	\
 				ft_lstadd_back_bonus.c \
 				ft_lstdelone_bonus.c \
 				ft_lstclear_bonus.c \
-				ft_lstiter_bonus.c \
-				ft_lstmap_bonus.c
+				ft_lstiter_bonus.c
 
-OBJS =			$(SRCS:%.c=$(OBJSPATH)%.o)
-OBJS_BONUS =	$(SRCS_BONUS:%.c=$(OBJSPATH)%.o)
+OBJS		=	$(SRCS:%.c=$(OBJSPATH)%.o)
+OBJS_B		=	$(SRCS_B:%.c=$(OBJSPATH)%.o)
 
 # *************************************************************************** #
+#		FUNCTIONS	#
 
 define progress_bar
 				@total=$(words $(SRCS)); \
@@ -116,21 +131,32 @@ define progress_bar
 					((i = i + 1)); \
 				done; \
 				printf "]\r["; \
-				printf "$(RANDOM_COLOR)";
+				printf "$(GRE)";
+endef
+
+define progress_bar_bonus
+				@total=$(words $(SRCS_B)); \
+				i=0; \
+				printf "["; \
+				while [[ $$i -lt $$total ]]; do \
+					printf " "; \
+					((i = i + 1)); \
+				done; \
+				printf "]\r["; \
+				printf "$(YEL)";
 endef
 
 # *************************************************************************** #
-#       RULES   #
+#		RULES		#
 
 all: 			clearscreen check_up_to_date $(NAME)
 
-bonus:			.bonus
+$(NAME):		$(OBJS)
+				@$(LIB) $(NAME) $(OBJS)
 
-.bonus:			launch $(OBJS_BONUS)
-				@ar rc $(NAME) $(OBJS_BONUS)
-				@ranlib $(NAME)
-				@touch .bonus
-				@printf "\n$(B)$(RANDOM_COLOR)$(COMPILED)$(D)\n"
+$(OBJSPATH)%.o:	$(SRCSPATH)%.c | $(OBJSPATH)
+				$(COMPILER) -c $< -o $@
+				@printf "█"
 
 clean:			clearscreen
 				@$(RM) $(OBJSPATH)
@@ -144,10 +170,22 @@ fclean:			clean
 
 re:				fclean all
 
+bonus:			clearscreen check_up_to_date_bonus
+
+.bonus:			launch_bonus $(OBJS_B)
+				@$(LIB) $(NAME) $(OBJS_B)
+				@touch .bonus
+				@printf "\n$(B)$(RANDOM_COLOR)$(COMPILED)$(D)\n"
+
+.PHONY:			all clean fclean re bonus
+
+# *************************************************************************** #
+#		CUSTOM RULES		#
+
 check_up_to_date:
 				if $(MAKE) --question $(NAME); then \
 					$(MAKE) print_title; \
-					printf "$(B)$(RANDOM_COLOR)$(UP_TO_DATE)$(D)\n"; \
+					printf "$(B)$(RANDOM_COLOR)$(UPDATED)$(D)\n"; \
 				else \
 					$(MAKE) clearscreen; \
 					$(MAKE) launch; \
@@ -157,13 +195,18 @@ check_up_to_date:
 					printf "$(B)$(RANDOM_COLOR)$(COMPILED)$(D)\n"; \
 				fi
 
-$(NAME):		$(OBJS)
-				@ar rc $(NAME) $(OBJS)
-				@ranlib $(NAME)
-
-$(OBJSPATH)%.o:	$(SRCSPATH)%.c | $(OBJSPATH)
-				$(CC) $(CFLAGS) -c $< -o $@
-				@printf "█"
+check_up_to_date_bonus:
+				if [ -f .bonus ]; then \
+					$(MAKE) print_title; \
+					printf "$(B)$(RANDOM_COLOR)$(UPDATED_B)$(D)\n"; \
+				else \
+					$(MAKE) clearscreen; \
+					$(MAKE) launch_bonus; \
+					$(MAKE) .bonus; \
+					$(MAKE) clearscreen; \
+					$(MAKE) print_title; \
+					printf "$(B)$(RANDOM_COLOR)$(COMPILED_B)$(D)\n"; \
+				fi
 
 $(OBJSPATH):
 				@mkdir -p $(dir $@) # 2> /dev/null || true
@@ -185,4 +228,8 @@ launch:
 				$(MAKE) print_title
 				$(call progress_bar)
 
-.PHONY:			all clean fclean re launch bonus clearscreen check_up_to_date
+launch_bonus:
+				$(MAKE) print_title
+				$(call progress_bar_bonus)
+
+.PHONY:			launch launch_bonus clearscreen check_up_to_date check_up_to_date_bonus

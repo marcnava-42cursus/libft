@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 16:58:29 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/23 18:47:46 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/29 16:57:06 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,17 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+// int	main(void)
+// {
+// 	char	str1[] = "Hello World";
+// 	char	str2[11];
+// 	char	*ptr;
+
+// 	ptr = ft_memmove(str2, str1, 11);
+// 	if (ptr)
+// 		printf("%s\n", str2);
+// 	else
+// 		printf("Error\n");
+// 	return (0);
+// }

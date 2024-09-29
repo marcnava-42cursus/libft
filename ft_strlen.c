@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:24:55 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/23 18:33:24 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/29 17:32:02 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,13 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
+
+// int	main(void)
+// {
+// 	char	*str = "Hello World";
+// 	size_t	len;
+
+// 	len = ft_strlen(str);
+// 	printf("'%s' has length %ld\n", str, len);
+// 	return (0);
+// }

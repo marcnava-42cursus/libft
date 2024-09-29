@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 19:56:15 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/25 14:28:49 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/29 16:58:33 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,16 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	ft_putchar_fd((n % 10) + '0', fd);
 }
+
+// int	main(void)
+// {
+// 	ft_putnbr_fd(1234567890, 1);
+// 	ft_putchar_fd('\n', 1);
+// 	ft_putnbr_fd(-1234567890, 1);
+// 	ft_putchar_fd('\n', 1);
+// 	ft_putnbr_fd(0, 1);
+// 	ft_putchar_fd('\n', 1);
+// 	ft_putnbr_fd(-2147483648, 1);
+// 	ft_putchar_fd('\n', 1);
+// 	return (0);
+// }

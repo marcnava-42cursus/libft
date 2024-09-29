@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:05:31 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/25 11:09:02 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/29 17:31:42 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,18 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	join[i + j] = '\0';
 	return (join);
 }
+
+// int	main(void)
+// {
+// 	char	*str1 = "Hello ";
+// 	char	*str2 = "World";
+// 	char	*join;
+
+// 	join = ft_strjoin(str1, str2);
+// 	if (join)
+// 		printf("'%s' + '%s' = '%s'\n", str1, str2, join);
+// 	else
+// 		printf("Join failed\n");
+// 	free(join);
+// 	return (0);
+// }

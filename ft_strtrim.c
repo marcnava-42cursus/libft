@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:15:53 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/26 18:12:01 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/29 16:06:05 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
 	size_t	start;
 	size_t	end;
 
@@ -26,6 +25,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1);
 	while (end > start && ft_strchr(set, s1[end - 1]))
 		end--;
-	str = ft_substr(s1, start, end - start);
-	return (str);
+	return (ft_substr(s1, start, end - start));
 }
+
+// int	main(void)
+// {
+// 	char	*str = "lojlololololohololololololo";
+// 	char	*set = "lo";
+// 	char	*trimmed = ft_strtrim(str, set);
+// 	printf("Original: \"%s\"\n", str);
+// 	printf("Trimmed: \"%s\"\n", trimmed);
+// 	free(trimmed);
+// 	return (0);
+// }

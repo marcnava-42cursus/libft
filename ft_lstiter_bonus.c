@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:44:02 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/26 17:30:35 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/29 16:53:54 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,3 +22,15 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
+
+// int	main(void)
+// {
+// 	t_list	*list;
+// 	t_list	*new;
+
+// 	list = ft_lstnew("Hello");
+// 	new = ft_lstnew("World");
+// 	ft_lstadd_back(&list, new);
+// 	ft_lstiter(list, &ft_putstr_fd);
+// 	return (0);
+// }

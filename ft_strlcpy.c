@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 18:13:21 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/24 18:14:04 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/29 17:31:52 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,14 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (src_len);
 }
+
+// int	main(void)
+// {
+// 	char	src[] = "Hello World";
+// 	char	dst[6];
+// 	size_t	len;
+
+// 	len = ft_strlcpy(dst, src, 6);
+// 	printf("'%s' copied to '%s' with length %ld\n", src, dst, len);
+// 	return (0);
+// }

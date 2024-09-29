@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:37:06 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/26 15:40:04 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/27 20:24:14 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "libft.h"
 
 /* PART 1 - FUNCTIONS OF LIBC */
 /* Checks if c is alphabetic */

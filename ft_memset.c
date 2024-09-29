@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:40:05 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/23 18:33:19 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/29 16:57:19 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,16 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
+
+// int	main(void)
+// {
+// 	char	str[11] = "Hello World";
+// 	char	*ptr;
+
+// 	ptr = ft_memset(str, 'a', 11);
+// 	if (ptr)
+// 		printf("%s\n", str);
+// 	else
+// 		printf("Error\n");
+// 	return (0);
+// }

@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 18:14:18 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/25 16:48:20 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/29 17:31:11 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,18 @@ char	*ft_strdup(const char *s)
 	ft_memcpy(str, s, len);
 	return (str);
 }
+
+// int	main(void)
+// {
+// 	char	*str;
+// 	char	*dup;
+
+// 	str = "Hello World";
+// 	dup = ft_strdup(str);
+// 	if (dup)
+// 		printf("'%s' duplicated to '%s'\n", str, dup);
+// 	else
+// 		printf("Duplication failed\n");
+// 	free(dup);
+// 	return (0);
+// }

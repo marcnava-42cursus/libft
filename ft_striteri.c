@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 14:08:38 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/25 14:10:57 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/29 17:31:24 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
+
+// int	main(void)
+// {
+// 	char	str[] = "Hello World";
+
+// 	ft_striteri(str, ft_putchar_fd);
+// 	return (0);
+// }

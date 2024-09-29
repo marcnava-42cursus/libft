@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 13:49:20 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/25 14:06:05 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/29 17:32:12 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,17 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	new[i] = '\0';
 	return (new);
 }
+
+// int	main(void)
+// {
+// 	char	*str = "Hello World";
+// 	char	*new;
+
+// 	new = ft_strmapi(str, ft_toupper);
+// 	if (new)
+// 		printf("'%s' mapped to '%s'\n", str, new);
+// 	else
+// 		printf("Mapping failed\n");
+// 	free(new);
+// 	return (0);
+// }

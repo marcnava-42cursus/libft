@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 10:22:24 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/25 11:00:29 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/29 17:36:07 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,17 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
+
+// int	main(void)
+// {
+// 	char	*str = "Hello World";
+// 	char	*sub;
+
+// 	sub = ft_substr(str, 6, 5);
+// 	if (sub)
+// 		printf("'%s' substring from 6 to 5: '%s'\n", str, sub);
+// 	else
+// 		printf("Substring failed\n");
+// 	free(sub);
+// 	return (0);
+// }
