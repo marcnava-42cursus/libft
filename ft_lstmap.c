@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 18:49:27 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/29 18:46:30 by marcnava         ###   ########.fr       */
+/*   Created: 2024/09/29 17:50:53 by marcnava          #+#    #+#             */
+/*   Updated: 2024/09/29 20:05:20 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+#include "libft.h"
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	while ((*s != '\0') && (*s != (char)c))
-		s++;
-	if (*s == (char)c)
-		return ((char *)s);
-	return (0);
+	t_list	*new_lst;
+	t_list	*new_elem;
+
+	if (!lst || !f || !del)
+		return (NULL);
+	new_lst = NULL;
+	while (lst)
+	{
+		new_elem = ft_lstnew(f(lst->content));
+		if (!new_elem)
+		{
+			ft_lstclear(&new_lst, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_lst, new_elem);
+		lst = lst->next;
+	}
+	return (new_lst);
 }
-
-// int	main(void)
-// {
-// 	char	*str = "Hello World";
-// 	char	c = 'W';
-// 	char	*ptr;
-
-// 	ptr = ft_strchr(str, c);
-// 	if (ptr)
-// 		printf("'%c' found at position %ld\n", c, ptr - str);
-// 	else
-// 		printf("'%c' not found\n", c);
-// 	return (0);
-// }
