@@ -6,13 +6,13 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 12:15:38 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/29 20:24:53 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/29 21:25:43 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_getlen(int n)
+static int	ft_getlen(int n)
 {
 	int	len;
 
@@ -30,7 +30,7 @@ int	ft_getlen(int n)
 	return (len);
 }
 
-char	*ft_checkvalues(int n)
+static char	*ft_checkvalues(int n)
 {
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
