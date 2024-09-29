@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 12:15:38 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/25 14:48:32 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/29 20:24:53 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,24 +43,28 @@ char	*ft_itoa(int n)
 {
 	char	*str;
 	int		len;
+	int		sign;
 
-	if (!ft_checkvalues(n))
+	if (n == -2147483648 || n == 0)
 		return (ft_checkvalues(n));
 	len = ft_getlen(n);
-	str = (char *)malloc((sizeof(char)) * (len + 1));
-	if (!str)
-	{
-		free(str);
-		return (NULL);
-	}
-	str[len--] = 0;
+	sign = 0;
 	if (n < 0)
-		str[0] = '-';
-	while (n > 0)
 	{
-		str[len--] = n % 10 + '0';
+		sign = 1;
+		n = -n;
+	}
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	while (len > 0)
+	{
+		str[--len] = n % 10 + '0';
 		n /= 10;
 	}
+	if (sign)
+		str[0] = '-';
 	return (str);
 }
 

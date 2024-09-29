@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:47:40 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/29 19:05:04 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/09/29 20:08:43 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,7 @@ char	**ft_split(char const *s, char c)
 // {
 // 	char	**strs;
 // 	size_t	i;
-	
 // 	char	*s = "Hello World";
-	
 // 	strs = ft_split(s, ' ');
 // 	i = 0;
 // 	while (strs[i])
