@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 18:06:56 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/29 20:13:39 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:04:32 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[dst_len + i] = '\0';
 	return (dst_len + src_len);
 }
+
+// int	main(void)
+// {
+// 	char	dst[20] = "Hola";
+// 	char	src[] = " que tal estas";
+// 	size_t	size = 20;
+
+// 	printf("%lu\n", ft_strlcat(dst, src, size));
+// 	printf("%s\n", dst);
+// 	return (0);
+// }

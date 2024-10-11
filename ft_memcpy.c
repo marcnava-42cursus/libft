@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:18:03 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/29 16:56:52 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/10/07 18:24:35 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (((unsigned char *)dest)[i] == 0
-		|| ((unsigned char *)src)[i] == 0)
-		return (0);
+	if (!dest && !src)
+		return (NULL);
 	while (i < n)
 	{
 		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];

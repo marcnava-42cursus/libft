@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 10:22:24 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/29 17:36:07 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/10/02 17:12:42 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!sub)
 		return (0);
 	i = 0;
-	while (i < len)
+	while (i < len || (start + i) < len)
 	{
 		sub[i] = s[start + i];
 		i++;

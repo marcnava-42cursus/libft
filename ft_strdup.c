@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 18:14:18 by marcnava          #+#    #+#             */
-/*   Updated: 2024/09/29 17:31:11 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/10/02 17:13:40 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@ char	*ft_strdup(const char *s)
 	char	*str;
 	size_t	len;
 
+	if (!s)
+		return (NULL);
 	len = ft_strlen(s) + 1;
+	if (!len)
+		return (NULL);
 	str = (char *)malloc(len);
 	if (!str)
 		return (NULL);
