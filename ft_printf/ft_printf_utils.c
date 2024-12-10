@@ -6,12 +6,11 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 18:25:52 by marcnava          #+#    #+#             */
-/*   Updated: 2024/11/19 19:28:34 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/12/10 18:15:54 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/ft_printf.h"
-#include "../headers/libft.h"
 
 void	ft_str_types(char const *format, va_list args, int *size)
 {

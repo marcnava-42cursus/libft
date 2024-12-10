@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:22:04 by marcnava          #+#    #+#             */
-/*   Updated: 2024/11/19 19:16:01 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/12/10 18:19:55 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,6 @@ static size_t	ft_count_words(const char *s, char c)
 			s++;
 	}
 	return (words);
-}
-
-static void	ft_free_matrix(void **matrix)
-{
-	size_t	row;
-
-	row = 0;
-	while (matrix[row])
-	{
-		ft_free((void **)&(matrix[row]));
-		row++;
-	}
-	ft_free((void **)&matrix);
 }
 
 char	**ft_split(const char *s, char c)

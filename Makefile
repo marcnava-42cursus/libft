@@ -6,28 +6,9 @@
 #    By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/26 17:33:23 by marcnava          #+#    #+#              #
-#    Updated: 2024/11/25 14:11:53 by marcnava         ###   ########.fr        #
+#    Updated: 2024/12/10 18:49:49 by marcnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-# *************************************************************************** #
-#		COLORS		#
-
-B	=			$(shell tput bold)
-BLA =			$(shell tput setaf 0)
-RED =			$(shell tput setaf 1)
-GRE =			$(shell tput setaf 2)
-YEL =			$(shell tput setaf 3)
-BLU =			$(shell tput setaf 4)
-MAG =			$(shell tput setaf 5)
-CYA =			$(shell tput setaf 6)
-WHI =			$(shell tput setaf 7)
-D	=			$(shell tput sgr0)
-BEL =			$(shell tput bel)
-CLR =			$(shell tput el 1)
-
-RANDOM_COLOR =	$(shell shuf -e "$(BLA)" "$(RED)" "$(GRE)" "$(YEL)" "$(BLU)" \
-				"$(MAG)" "$(CYA)" "$(WHI)" -n 1)
 
 # **************************************************************************** #
 #		VARIABLES	#
@@ -39,15 +20,8 @@ RM			=	rm -rf
 
 CFLAGS		=	-Wall -Wextra -Werror
 
-DFLAGS		=	-g3
-DFLAGS		+=	-fsanitize=address
-
 COMPILER	=	$(CC) $(CFLAGS)
 LIB			=	ar rcs
-
-MAKEFLAGS	+=	--silent
-
-SHELL		:=	bash
 
 # **************************************************************************** #
 #		FOLDERS		#
@@ -62,37 +36,11 @@ CONV		=	./conversions
 PRINTF		=	./ft_printf
 GNL			=	./get_next_line
 
-# *************************************************************************** #
-#		MESSAGES	#
-
-UPDATED		=	$(NAME) up to date! No relink made ( ͡° ͜ʖ ͡°)
-COMPILED	=	$(NAME) compiled successfully!
-RM_OBJ		=	Removed $(OBJS)
-RM_NAME		=	Removed $(NAME)
-
-# *************************************************************************** #
-#		FUNCTIONS	#
-
-define progress_bar
-				@total=$(words $(SRCS)); \
-				i=0; \
-				printf "["; \
-				while [[ $$i -lt $$total ]]; do \
-					printf " "; \
-					((i = i + 1)); \
-				done; \
-				printf "]\r["; \
-				printf "$(GRE)";
-endef
-
-ifeq ($(MAKECMDGOALS), debug)
-	COMPILER	+=	$(DFLAGS)
-endif
-
 # **************************************************************************** #
 #		FILES		#
 
 SRCS 		=	$(AUX)/ft_digits_base.c			\
+				$(AUX)/ft_free_matrix.c			\
 				$(AUX)/ft_free.c				\
 				$(AUX)/ft_split.c				\
 				$(AUX)/ft_striteri.c			\
@@ -175,47 +123,20 @@ OBJS		=	$(SRCS:.c=.o)
 # **************************************************************************** #
 #		RULES		#
 
-all: 			clearscreen check_up_to_date $(NAME)
+all: 			$(NAME)
 
 $(NAME):		$(OBJS)
 				@$(LIB) $(NAME) $(OBJS)
 
 %.o:			%.c
-				$(COMPILER) -I$(HEADERS) -c $< -o $@
-				@printf "█"
+				@$(COMPILER) -I$(HEADERS) -c $< -o $@
 
-clean:			clearscreen
+clean:
 				@$(RM) $(OBJS)
-				@printf "$(B)$(RANDOM_COLOR)$(RM_OBJ)$(D)\n"
 
 fclean:			clean
 				@$(RM) $(NAME)
-				@printf "$(B)$(RANDOM_COLOR)$(RM_NAME)$(D)\n"
 
 re:				fclean all
 
 .PHONY:			all clean fclean re
-
-# *************************************************************************** #
-#		CUSTOM RULES		#
-
-debug:			$(NAME)
-
-check_up_to_date:
-				if $(MAKE) --question $(NAME); then \
-					printf "$(B)$(RANDOM_COLOR)$(UPDATED)$(D)\n"; \
-				else \
-					$(MAKE) clearscreen; \
-					$(MAKE) launch; \
-					$(MAKE) $(NAME); \
-					$(MAKE) clearscreen; \
-					printf "$(B)$(RANDOM_COLOR)$(COMPILED)$(D)\n"; \
-				fi
-
-clearscreen:
-				@clear
-
-launch:
-				$(call progress_bar)
-
-.PHONY:			launch clearscreen check_up_to_date

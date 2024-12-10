@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 19:57:48 by marcnava          #+#    #+#             */
-/*   Updated: 2024/11/19 19:07:05 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/12/10 18:15:30 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdint.h>
+# include "libft.h"
 
 # define FT_MAYUS 0
 # define FT_MINUS 1
+
+int		ft_printf(char const *format, ...);
 
 void	ft_decimal_types(char const *format, va_list args, int *size);
 void	ft_hex_types(char const *format, va_list args, int *size);

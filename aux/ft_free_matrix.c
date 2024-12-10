@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_free_matrix.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 18:48:25 by marcnava          #+#    #+#             */
-/*   Updated: 2024/12/10 18:14:46 by marcnava         ###   ########.fr       */
+/*   Created: 2024/12/10 18:20:10 by marcnava          #+#    #+#             */
+/*   Updated: 2024/12/10 18:23:06 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "../headers/libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+void	ft_free_matrix(void **matrix)
+{
+	size_t	row;
 
-# define MAX_FD 1024
-
-# include <fcntl.h>
-# include "libft.h"
-
-#endif
+	row = 0;
+	while (matrix[row])
+	{
+		ft_free((void **)&(matrix[row]));
+		row++;
+	}
+	ft_free((void **)&matrix);
+}

@@ -6,12 +6,11 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:48:08 by marcnava          #+#    #+#             */
-/*   Updated: 2024/11/19 19:42:00 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/12/10 18:14:53 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/get_next_line.h"
-#include "../headers/libft.h"
 
 static char	*ft_get_line_buffer(int fd, char *pending_line, char *buffer)
 {

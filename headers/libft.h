@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:37:06 by marcnava          #+#    #+#             */
-/*   Updated: 2024/11/19 19:39:03 by marcnava         ###   ########.fr       */
+/*   Updated: 2024/12/10 18:25:16 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,14 @@
 # include <limits.h>
 # include <stdint.h>
 
+# include "ft_printf.h"
+# include "get_next_line.h"
+
 /* FUNCTIONS  */
 /* aux  */
 
 size_t	ft_count_digits(int n, int base_len);
+void	ft_free_matrix(void **matrix);
 void	ft_free(void **ptr);
 char	**ft_split(char const *s, char c);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
@@ -128,13 +132,5 @@ t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
-
-/* ft_printf  */
-
-int		ft_printf(char const *format, ...);
-
-/* get_next_line  */
-
-char	*get_next_line(int fd);
 
 #endif
