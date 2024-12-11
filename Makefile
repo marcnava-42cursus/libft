@@ -6,7 +6,7 @@
 #    By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/26 17:33:23 by marcnava          #+#    #+#              #
-#    Updated: 2024/12/10 18:49:49 by marcnava         ###   ########.fr        #
+#    Updated: 2024/12/11 18:42:56 by marcnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ SRCS		+=	$(LIBC)/ft_bzero.c				\
 				$(LIBC)/ft_memmove.c			\
 				$(LIBC)/ft_memset.c				\
 				$(LIBC)/ft_strchr.c				\
+				$(LIBC)/ft_strcmp.c				\
 				$(LIBC)/ft_strdup.c				\
 				$(LIBC)/ft_strlcat.c			\
 				$(LIBC)/ft_strlcpy.c			\
