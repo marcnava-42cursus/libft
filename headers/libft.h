@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:37:06 by marcnava          #+#    #+#             */
-/*   Updated: 2024/12/11 18:43:19 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/01/16 19:32:00 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdint.h>
-
-# include "ft_printf.h"
-# include "get_next_line.h"
 
 /* FUNCTIONS  */
 /* aux  */
