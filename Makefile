@@ -6,7 +6,7 @@
 #    By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/26 17:33:23 by marcnava          #+#    #+#              #
-#    Updated: 2024/12/11 18:42:56 by marcnava         ###   ########.fr        #
+#    Updated: 2025/01/16 12:31:11 by marcnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,6 @@ LIBC		=	./libc
 CTYPE		=	./libc/ctype
 LST			=	./lst
 CONV		=	./conversions
-PRINTF		=	./ft_printf
-GNL			=	./get_next_line
 
 # **************************************************************************** #
 #		FILES		#
@@ -111,13 +109,6 @@ SRCS		+=	$(CONV)/ft_atoi.c				\
 				$(CONV)/ft_uitoa.c				\
 				$(CONV)/ft_ultoa.c				\
 				$(CONV)/ft_ustoa.c
-
-SRCS		+=	$(PRINTF)/ft_conversion_utils.c	\
-				$(PRINTF)/ft_mod_printf.c		\
-				$(PRINTF)/ft_printf_utils.c		\
-				$(PRINTF)/ft_printf.c
-
-SRCS		+=	$(GNL)/get_next_line.c
 
 OBJS		=	$(SRCS:.c=.o)
 
