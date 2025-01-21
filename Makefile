@@ -6,7 +6,7 @@
 #    By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/26 17:33:23 by marcnava          #+#    #+#              #
-#    Updated: 2024/12/11 18:42:56 by marcnava         ###   ########.fr        #
+#    Updated: 2025/01/21 21:17:37 by marcnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -127,16 +127,16 @@ OBJS		=	$(SRCS:.c=.o)
 all: 			$(NAME)
 
 $(NAME):		$(OBJS)
-				@$(LIB) $(NAME) $(OBJS)
+				$(LIB) $(NAME) $(OBJS)
 
 %.o:			%.c
-				@$(COMPILER) -I$(HEADERS) -c $< -o $@
+				$(COMPILER) -I$(HEADERS) -c $< -o $@
 
 clean:
-				@$(RM) $(OBJS)
+				$(RM) $(OBJS)
 
 fclean:			clean
-				@$(RM) $(NAME)
+				$(RM) $(NAME)
 
 re:				fclean all
 
