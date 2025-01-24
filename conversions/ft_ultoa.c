@@ -6,11 +6,11 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 20:31:15 by sede-san          #+#    #+#             */
-/*   Updated: 2024/11/26 18:07:29 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/01/24 12:07:23 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/libft.h"
+#include "../includes/libft.h"
 
 char	*ft_ultoa_base(unsigned long n, const char *base)
 {

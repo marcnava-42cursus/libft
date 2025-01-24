@@ -6,11 +6,11 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:22:04 by marcnava          #+#    #+#             */
-/*   Updated: 2024/12/10 18:19:55 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/01/24 12:07:23 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/libft.h"
+#include "../includes/libft.h"
 
 static size_t	ft_count_words(const char *s, char c)
 {

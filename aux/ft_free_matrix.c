@@ -6,11 +6,11 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:20:10 by marcnava          #+#    #+#             */
-/*   Updated: 2024/12/10 18:23:06 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/01/24 12:07:23 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/libft.h"
+#include "../includes/libft.h"
 
 void	ft_free_matrix(void **matrix)
 {

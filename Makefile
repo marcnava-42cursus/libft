@@ -6,7 +6,7 @@
 #    By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/26 17:33:23 by marcnava          #+#    #+#              #
-#    Updated: 2025/01/21 21:17:37 by marcnava         ###   ########.fr        #
+#    Updated: 2025/01/24 16:05:49 by marcnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,13 +26,15 @@ LIB			=	ar rcs
 # **************************************************************************** #
 #		FOLDERS		#
 
-HEADERS		=	./headers
+INCLUDES	=	./includes
 AUX			=	./aux
 FDOUT		=	./fdout
 LIBC		=	./libc
 CTYPE		=	./libc/ctype
 LST			=	./lst
 CONV		=	./conversions
+PRINTF		=	./ft_printf
+GNL			=	./get_next_line
 
 # **************************************************************************** #
 #		FILES		#
@@ -110,6 +112,14 @@ SRCS		+=	$(CONV)/ft_atoi.c				\
 				$(CONV)/ft_ultoa.c				\
 				$(CONV)/ft_ustoa.c
 
+SRCS		+=	$(PRINTF)/ft_conversion_utils.c	\
+				$(PRINTF)/ft_mod_printf.c		\
+				$(PRINTF)/ft_printf_utils.c		\
+				$(PRINTF)/ft_printf.c
+
+SRCS		+=	$(GNL)/get_next_line_utils.c	\
+				$(GNL)/get_next_line.c
+
 OBJS		=	$(SRCS:.c=.o)
 
 # **************************************************************************** #
@@ -121,7 +131,7 @@ $(NAME):		$(OBJS)
 				$(LIB) $(NAME) $(OBJS)
 
 %.o:			%.c
-				$(COMPILER) -I$(HEADERS) -c $< -o $@
+				$(COMPILER) -I$(INCLUDES) -c $< -o $@
 
 clean:
 				$(RM) $(OBJS)
