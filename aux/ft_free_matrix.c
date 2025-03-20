@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:20:10 by marcnava          #+#    #+#             */
-/*   Updated: 2025/01/24 12:07:23 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/03/20 16:24:34 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_free_matrix(void **matrix)
 	size_t	row;
 
 	row = 0;
-	while (matrix[row])
+	while (matrix || matrix[row])
 	{
 		ft_free((void **)&(matrix[row]));
 		row++;
