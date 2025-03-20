@@ -6,7 +6,7 @@
 #    By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/26 17:33:23 by marcnava          #+#    #+#              #
-#    Updated: 2025/01/24 16:05:49 by marcnava         ###   ########.fr        #
+#    Updated: 2025/03/20 17:06:20 by marcnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,21 +26,25 @@ LIB			=	ar rcs
 # **************************************************************************** #
 #		FOLDERS		#
 
+SRCPATH		=	./src
+BUILD		=	./build
 INCLUDES	=	./includes
-AUX			=	./aux
-FDOUT		=	./fdout
-LIBC		=	./libc
-CTYPE		=	./libc/ctype
-LST			=	./lst
-CONV		=	./conversions
-PRINTF		=	./ft_printf
-GNL			=	./get_next_line
+
+AUX			=	$(SRCPATH)/aux
+FDOUT		=	$(SRCPATH)/fdout
+LIBC		=	$(SRCPATH)/libc
+CTYPE		=	$(SRCPATH)/libc/ctype
+LST			=	$(SRCPATH)/lst
+CONV		=	$(SRCPATH)/conversions
+PRINTF		=	$(SRCPATH)/ft_printf
+GNL			=	$(SRCPATH)/get_next_line
 
 # **************************************************************************** #
 #		FILES		#
 
 SRCS 		=	$(AUX)/ft_digits_base.c			\
 				$(AUX)/ft_free_matrix.c			\
+				$(AUX)/ft_free_matrixes.c		\
 				$(AUX)/ft_free.c				\
 				$(AUX)/ft_split.c				\
 				$(AUX)/ft_striteri.c			\
@@ -120,25 +124,28 @@ SRCS		+=	$(PRINTF)/ft_conversion_utils.c	\
 SRCS		+=	$(GNL)/get_next_line_utils.c	\
 				$(GNL)/get_next_line.c
 
-OBJS		=	$(SRCS:.c=.o)
+OBJS		=	$(SRCS:$(SRCPATH)/%.c=$(BUILD)/%.o)
 
 # **************************************************************************** #
 #		RULES		#
 
 all: 			$(NAME)
+.PHONY:			all
 
 $(NAME):		$(OBJS)
 				$(LIB) $(NAME) $(OBJS)
 
-%.o:			%.c
+$(BUILD)/%.o:	$(SRCPATH)/%.c
+				mkdir -p $(@D)
 				$(COMPILER) -I$(INCLUDES) -c $< -o $@
 
 clean:
-				$(RM) $(OBJS)
+				$(RM) $(BUILD)
+.PHONY:			clean
 
 fclean:			clean
 				$(RM) $(NAME)
+.PHONY:			fclean
 
 re:				fclean all
-
-.PHONY:			all clean fclean re
+.PHONY:			re

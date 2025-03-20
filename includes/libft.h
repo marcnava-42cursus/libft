@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:37:06 by marcnava          #+#    #+#             */
-/*   Updated: 2025/01/24 16:02:57 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/03/20 17:19:13 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 
 size_t	ft_count_digits(int n, int base_len);
 void	ft_free_matrix(void **matrix);
+void	ft_free_matrixes(void **first, ...);
 void	ft_free(void **ptr);
 char	**ft_split(char const *s, char c);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
