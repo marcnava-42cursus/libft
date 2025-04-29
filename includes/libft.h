@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:37:06 by marcnava          #+#    #+#             */
-/*   Updated: 2025/03/20 17:19:13 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/04/24 20:11:40 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putchar(char c);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putendl(char *s);
+void	ft_puterror(char *s);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbr(int n);
 void	ft_putstr_fd(char *s, int fd);

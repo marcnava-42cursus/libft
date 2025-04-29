@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 16:24:59 by marcnava          #+#    #+#             */
-/*   Updated: 2025/03/20 17:13:01 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/03/20 17:23:13 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@
  * list.
  * 
  * @note All matrices passed to this function must be null-terminated arrays of
- * pointers. The function expects a `NULL` at the end of the argument list to
- * mark its termination.
+ *       pointers. The function expects a `NULL` at the end of the argument list
+ *      to mark its termination.
+ * 
  * @warning Passing non-null-terminated arrays or omitting the final `NULL` may
- * result in undefined behavior.
+ *          result in undefined behavior.
  */
 void	ft_free_matrixes(void **first, ...)
 {

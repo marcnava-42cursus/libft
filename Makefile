@@ -6,7 +6,7 @@
 #    By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/26 17:33:23 by marcnava          #+#    #+#              #
-#    Updated: 2025/03/20 17:06:20 by marcnava         ###   ########.fr        #
+#    Updated: 2025/04/24 20:10:02 by marcnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ SRCS		+=	$(FDOUT)/ft_putchar_fd.c		\
 				$(FDOUT)/ft_putchar.c			\
 				$(FDOUT)/ft_putendl_fd.c		\
 				$(FDOUT)/ft_putendl.c			\
+				$(FDOUT)/ft_puterror.c			\
 				$(FDOUT)/ft_putnbr_fd.c			\
 				$(FDOUT)/ft_putnbr.c			\
 				$(FDOUT)/ft_putstr_fd.c			\
