@@ -6,11 +6,11 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:20:26 by marcnava          #+#    #+#             */
-/*   Updated: 2025/03/20 17:12:35 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/06/29 21:19:01 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

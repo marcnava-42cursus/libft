@@ -6,11 +6,11 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 16:30:05 by marcos            #+#    #+#             */
-/*   Updated: 2025/03/20 17:24:49 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/06/29 21:19:01 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
 /**
  * @brief Counts the number of digits needed to represent an integer in a given
@@ -51,4 +51,3 @@ size_t	ft_count_digits(int n, int base_len)
 	}
 	return (digits);
 }
-

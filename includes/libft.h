@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:37:06 by marcnava          #+#    #+#             */
-/*   Updated: 2025/04/24 20:11:40 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/06/27 16:57:29 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,13 @@ size_t	ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
+
+/* math */
+
+int		ft_avg(int count, ...);
+int		ft_pow2(int base);
+int		ft_pown(int base, int exp);
+int		ft_sum(int count, ...);
 
 /* lists  */
 

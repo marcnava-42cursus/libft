@@ -6,11 +6,11 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 16:40:33 by marcnava          #+#    #+#             */
-/*   Updated: 2025/03/20 17:12:35 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/06/29 21:19:01 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
 static char	*ft_stoa_base_conversion(short n, const char *base, size_t digits)
 {

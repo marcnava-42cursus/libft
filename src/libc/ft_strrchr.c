@@ -6,11 +6,11 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 19:06:42 by marcnava          #+#    #+#             */
-/*   Updated: 2025/03/20 17:12:35 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/06/29 19:58:33 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

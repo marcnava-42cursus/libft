@@ -6,11 +6,11 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:48:08 by marcnava          #+#    #+#             */
-/*   Updated: 2025/01/24 16:01:29 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/06/29 19:52:44 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/get_next_line.h"
+#include "get_next_line.h"
 
 void	ft_check_free(void **ptr)
 {

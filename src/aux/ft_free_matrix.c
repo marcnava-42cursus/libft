@@ -6,11 +6,11 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 18:20:10 by marcnava          #+#    #+#             */
-/*   Updated: 2025/03/20 17:28:29 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/06/29 21:19:01 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
 /**
  * @brief Frees a dynamically allocated matrix (array of pointers).

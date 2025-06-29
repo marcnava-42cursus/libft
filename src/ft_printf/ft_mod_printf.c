@@ -6,11 +6,11 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 19:17:03 by marcnava          #+#    #+#             */
-/*   Updated: 2025/01/24 12:07:23 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/06/29 19:51:20 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 void	ft_putnbr_printf(int n, int *size)
 {

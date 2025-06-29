@@ -6,11 +6,11 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 20:25:24 by marcnava          #+#    #+#             */
-/*   Updated: 2025/03/20 17:30:18 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/06/29 21:19:01 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
 /**
  * @brief Frees a dynamically allocated pointer and sets it to NULL.
@@ -39,4 +39,3 @@ void	ft_free(void **ptr)
 		*ptr = NULL;
 	}
 }
-
