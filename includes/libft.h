@@ -6,14 +6,12 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:37:06 by marcnava          #+#    #+#             */
-/*   Updated: 2025/06/30 03:25:23 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/06/30 03:38:33 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-/* INCLUDES  */
 
 # include "aux.h"
 # include "conversions.h"
