@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_math.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 16:10:12 by marcnava          #+#    #+#             */
-/*   Updated: 2025/06/30 03:23:54 by marcnava         ###   ########.fr       */
+/*   Created: 2025/06/30 03:24:34 by marcnava          #+#    #+#             */
+/*   Updated: 2025/06/30 03:30:52 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_MATH_H
+# define FT_MATH_H
 
-void	ft_lstadd_front(t_list **lst, t_list *new_node)
-{
-	if (!lst || !new_node)
-		return ;
-	new_node->next = *lst;
-	*lst = new_node;
-}
+# include <stdint.h>
+
+# define FT_E 2.718281828
+# define FT_PI 3.141592653
+# define FT_PHI 1.618033988
+# define FT_SQRT2 1.414213562
+
+uint32_t	ft_abs(int nbr);
+int			ft_avg(int count, ...);
+int			ft_pow2(int base);
+int			ft_pown(int base, int exp);
+int			ft_sum(int count, ...);
+int			ft_logn(int base, int nbr);
+int			ft_log10(int nbr);
+
+#endif

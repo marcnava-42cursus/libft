@@ -6,43 +6,44 @@
 #    By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/26 17:33:23 by marcnava          #+#    #+#              #
-#    Updated: 2025/04/24 20:10:02 by marcnava         ###   ########.fr        #
+#    Updated: 2025/06/30 03:08:19 by marcnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # **************************************************************************** #
 #		VARIABLES	#
 
-NAME		=	libft.a
+NAME		:=	libft.a
 
-CC			=	cc
-RM			=	rm -rf
+CC			:=	cc
+RM			:=	rm -rf
 
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		:=	-Wall -Wextra -Werror
 
-COMPILER	=	$(CC) $(CFLAGS)
-LIB			=	ar rcs
+COMPILER	:=	$(CC) $(CFLAGS)
+LIB			:=	ar rcs
 
 # **************************************************************************** #
 #		FOLDERS		#
 
-SRCPATH		=	./src
-BUILD		=	./build
-INCLUDES	=	./includes
+SRCPATH		:=	./src
+BUILD		:=	./build
+INCLUDES	:=	./includes
 
-AUX			=	$(SRCPATH)/aux
-FDOUT		=	$(SRCPATH)/fdout
-LIBC		=	$(SRCPATH)/libc
-CTYPE		=	$(SRCPATH)/libc/ctype
-LST			=	$(SRCPATH)/lst
-CONV		=	$(SRCPATH)/conversions
-PRINTF		=	$(SRCPATH)/ft_printf
-GNL			=	$(SRCPATH)/get_next_line
+AUX			:=	$(SRCPATH)/aux
+CONV		:=	$(SRCPATH)/conversions
+FDOUT		:=	$(SRCPATH)/fdout
+PRINTF		:=	$(SRCPATH)/ft_printf
+GNL			:=	$(SRCPATH)/get_next_line
+LIBC		:=	$(SRCPATH)/libc
+CTYPE		:=	$(SRCPATH)/libc/ctype
+LST			:=	$(SRCPATH)/lst
+MATH		:=	$(SRCPATH)/math
 
 # **************************************************************************** #
 #		FILES		#
 
-SRCS 		=	$(AUX)/ft_digits_base.c			\
+SRCS 		:=	$(AUX)/ft_digits_base.c			\
 				$(AUX)/ft_free_matrix.c			\
 				$(AUX)/ft_free_matrixes.c		\
 				$(AUX)/ft_free.c				\
@@ -53,6 +54,16 @@ SRCS 		=	$(AUX)/ft_digits_base.c			\
 				$(AUX)/ft_strtrim.c				\
 				$(AUX)/ft_substr.c
 
+SRCS		+=	$(CONV)/ft_atoi.c				\
+				$(CONV)/ft_atol.c				\
+				$(CONV)/ft_atos.c				\
+				$(CONV)/ft_itoa.c				\
+				$(CONV)/ft_ltoa.c				\
+				$(CONV)/ft_stoa.c				\
+				$(CONV)/ft_uitoa.c				\
+				$(CONV)/ft_ultoa.c				\
+				$(CONV)/ft_ustoa.c
+
 SRCS		+=	$(FDOUT)/ft_putchar_fd.c		\
 				$(FDOUT)/ft_putchar.c			\
 				$(FDOUT)/ft_putendl_fd.c		\
@@ -62,6 +73,14 @@ SRCS		+=	$(FDOUT)/ft_putchar_fd.c		\
 				$(FDOUT)/ft_putnbr.c			\
 				$(FDOUT)/ft_putstr_fd.c			\
 				$(FDOUT)/ft_putstr.c
+
+SRCS		+=	$(PRINTF)/ft_conversion_utils.c	\
+				$(PRINTF)/ft_mod_printf.c		\
+				$(PRINTF)/ft_printf_utils.c		\
+				$(PRINTF)/ft_printf.c
+
+SRCS		+=	$(GNL)/get_next_line_utils.c	\
+				$(GNL)/get_next_line.c
 
 SRCS		+=	$(LIBC)/ft_bzero.c				\
 				$(LIBC)/ft_calloc.c				\
@@ -107,25 +126,16 @@ SRCS		+=	$(LST)/ft_lstadd_back.c			\
 				$(LST)/ft_lstnew.c				\
 				$(LST)/ft_lstsize.c
 
-SRCS		+=	$(CONV)/ft_atoi.c				\
-				$(CONV)/ft_atol.c				\
-				$(CONV)/ft_atos.c				\
-				$(CONV)/ft_itoa.c				\
-				$(CONV)/ft_ltoa.c				\
-				$(CONV)/ft_stoa.c				\
-				$(CONV)/ft_uitoa.c				\
-				$(CONV)/ft_ultoa.c				\
-				$(CONV)/ft_ustoa.c
+SRCS		+=	$(MATH)/ft_abs.c				\
+				$(MATH)/ft_avg.c				\
+				$(MATH)/ft_fact.c				\
+				$(MATH)/ft_log10.c				\
+				$(MATH)/ft_logn.c				\
+				$(MATH)/ft_pow2.c				\
+				$(MATH)/ft_pown.c				\
+				$(MATH)/ft_sum.c				\
 
-SRCS		+=	$(PRINTF)/ft_conversion_utils.c	\
-				$(PRINTF)/ft_mod_printf.c		\
-				$(PRINTF)/ft_printf_utils.c		\
-				$(PRINTF)/ft_printf.c
-
-SRCS		+=	$(GNL)/get_next_line_utils.c	\
-				$(GNL)/get_next_line.c
-
-OBJS		=	$(SRCS:$(SRCPATH)/%.c=$(BUILD)/%.o)
+OBJS		:=	$(SRCS:$(SRCPATH)/%.c=$(BUILD)/%.o)
 
 # **************************************************************************** #
 #		RULES		#

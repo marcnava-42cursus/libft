@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 16:10:12 by marcnava          #+#    #+#             */
-/*   Updated: 2025/06/30 03:23:54 by marcnava         ###   ########.fr       */
+/*   Created: 2025/06/30 03:01:28 by marcnava          #+#    #+#             */
+/*   Updated: 2025/06/30 03:05:33 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new_node)
+uint32_t	ft_abs(int nbr)
 {
-	if (!lst || !new_node)
-		return ;
-	new_node->next = *lst;
-	*lst = new_node;
+	if (nbr == INT_MAX)
+		return ((uint32_t)INT_MAX + 1u);
+	if (nbr < 0)
+		return ((uint32_t)(-nbr));
+	return ((uint32_t)nbr);
 }

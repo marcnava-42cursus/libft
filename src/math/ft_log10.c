@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_log10.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 16:10:12 by marcnava          #+#    #+#             */
-/*   Updated: 2025/06/30 03:23:54 by marcnava         ###   ########.fr       */
+/*   Created: 2025/06/29 23:09:35 by marcnava          #+#    #+#             */
+/*   Updated: 2025/06/29 23:12:35 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new_node)
+/**
+ * @brief Calculates the base-10 logarithm of an integer.
+ *
+ * This function returns the base-10 logarithm of the given integer `nbr`
+ * by calling the `ft_logn` function with base 10.
+ *
+ * @param nbr The integer whose base-10 logarithm is to be calculated.
+ * @return The base-10 logarithm of `nbr`.
+ */
+int	ft_log10(int nbr)
 {
-	if (!lst || !new_node)
-		return ;
-	new_node->next = *lst;
-	*lst = new_node;
+	return (ft_logn(10, nbr));
 }
