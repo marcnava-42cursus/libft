@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-char	*ft_strdup(const char *s)
+char	*gnl_strdup(const char *s)
 {
 	char	*str;
 	size_t	len;
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s)
 
 	if (!s)
 		return (NULL);
-	len = ft_strlen(s) + 1;
+	len = gnl_strlen(s) + 1;
 	if (!len)
 		return (NULL);
 	str = (char *)malloc(len);
@@ -35,7 +35,7 @@ char	*ft_strdup(const char *s)
 	return (str);
 }
 
-size_t	ft_strlen(const char *s)
+size_t	gnl_strlen(const char *s)
 {
 	size_t	i;
 
@@ -45,7 +45,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*gnl_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	i;
@@ -56,10 +56,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		ft_check_free((void **)&sub);
 		return (NULL);
 	}
-	if (ft_strlen(s) < start)
-		return (ft_strdup(""));
-	if (ft_strlen(s) < start + len)
-		len = ft_strlen(s) - start;
+	if (gnl_strlen(s) < start)
+		return (gnl_strdup(""));
+	if (gnl_strlen(s) < start + len)
+		len = gnl_strlen(s) - start;
 	sub = (char *)malloc(len + 1);
 	if (!sub)
 		return (NULL);
@@ -73,7 +73,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*gnl_strjoin(char const *s1, char const *s2)
 {
 	char	*join;
 	size_t	i;
@@ -81,7 +81,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	join = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	join = (char *)malloc(gnl_strlen(s1) + gnl_strlen(s2) + 1);
 	if (!join)
 		return (NULL);
 	i = 0;
@@ -100,7 +100,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (join);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*gnl_strchr(const char *s, int c)
 {
 	while ((*s != '\0') && (*s != (char)c))
 		s++;

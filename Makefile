@@ -6,7 +6,7 @@
 #    By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/26 17:33:23 by marcnava          #+#    #+#              #
-#    Updated: 2025/06/30 03:08:19 by marcnava         ###   ########.fr        #
+#    Updated: 2025/07/30 16:27:04 by marcnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SRCS 		:=	$(AUX)/ft_digits_base.c			\
 				$(AUX)/ft_free_matrix.c			\
 				$(AUX)/ft_free_matrixes.c		\
 				$(AUX)/ft_free.c				\
+				$(AUX)/ft_ftinit.c				\
 				$(AUX)/ft_split.c				\
 				$(AUX)/ft_striteri.c			\
 				$(AUX)/ft_strjoin.c				\

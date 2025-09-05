@@ -23,12 +23,12 @@
 # include <unistd.h>
 # include <fcntl.h>
 
-// lib functions
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strdup(const char *s);
-size_t	ft_strlen(const char *s);
+// gnl-local utils (prefixed to avoid symbol clashes with libft)
+char	*gnl_substr(char const *s, unsigned int start, size_t len);
+char	*gnl_strjoin(char const *s1, char const *s2);
+char	*gnl_strchr(const char *s, int c);
+char	*gnl_strdup(const char *s);
+size_t	gnl_strlen(const char *s);
 
 // gnl functions
 void	ft_check_free(void **ptr);
