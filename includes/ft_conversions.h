@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conversions.h                                      :+:      :+:    :+:   */
+/*   ft_conversions.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 03:14:38 by marcnava          #+#    #+#             */
-/*   Updated: 2025/06/30 03:27:14 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/09/20 23:41:45 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERSIONS_H
-# define CONVERSIONS_H
+#ifndef FT_CONVERSIONS_H
+# define FT_CONVERSIONS_H
 
 # include <limits.h>
 

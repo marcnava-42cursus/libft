@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_priv.h"
 
 void	ft_print_hex(uintptr_t n, int *size, unsigned int capitalize)
 {

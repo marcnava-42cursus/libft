@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_priv.h"
 
 void	ft_putnbr_printf(int n, int *size)
 {

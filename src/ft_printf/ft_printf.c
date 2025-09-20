@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_priv.h"
 
 static void	ft_choose_types(char const *format, va_list args, int *size)
 {

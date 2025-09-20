@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_priv.h"
 
 void	ft_str_types(char const *format, va_list args, int *size)
 {

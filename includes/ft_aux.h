@@ -6,14 +6,15 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 03:12:08 by marcnava          #+#    #+#             */
-/*   Updated: 2025/07/30 16:23:26 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/09/20 23:41:32 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AUX_H
-# define AUX_H
+#ifndef FT_AUX_H
+# define FT_AUX_H
 
 # include <stddef.h>
+# include <stdarg.h>
 
 size_t	ft_count_digits(int n, int base_len);
 void	ft_free_matrix(void **matrix);

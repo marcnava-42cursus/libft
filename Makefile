@@ -65,14 +65,10 @@ SRCS		+=	$(CONV)/ft_atoi.c				\
 				$(CONV)/ft_ultoa.c				\
 				$(CONV)/ft_ustoa.c
 
-SRCS		+=	$(FDOUT)/ft_putchar_fd.c		\
-				$(FDOUT)/ft_putchar.c			\
-				$(FDOUT)/ft_putendl_fd.c		\
+SRCS		+=	$(FDOUT)/ft_putchar.c			\
 				$(FDOUT)/ft_putendl.c			\
 				$(FDOUT)/ft_puterror.c			\
-				$(FDOUT)/ft_putnbr_fd.c			\
 				$(FDOUT)/ft_putnbr.c			\
-				$(FDOUT)/ft_putstr_fd.c			\
 				$(FDOUT)/ft_putstr.c
 
 SRCS		+=	$(PRINTF)/ft_conversion_utils.c	\

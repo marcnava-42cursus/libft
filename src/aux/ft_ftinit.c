@@ -12,6 +12,39 @@
 
 #include "libft.h"
 
+/* Auxiliares (máx. 4): separar para cumplir Norminette */
+static void	ft_set_int(void *ptr, const char *val)
+{
+	*(int *)ptr = ft_atoi(val);
+}
+
+static void	ft_set_long(void *ptr, const char *val)
+{
+	*(long *)ptr = ft_atol(val);
+}
+
+static void	ft_set_char(void *ptr, const char *val)
+{
+	*(char *)ptr = val[0];
+}
+
+static void	ft_apply_spec(void *ptr, const char *input)
+{
+	char		type;
+	const char	*val;
+
+	type = input[0];
+	val = input + 1;
+	if (type == 'i')
+		ft_set_int(ptr, val);
+	else if (type == 'l')
+		ft_set_long(ptr, val);
+	else if (type == 'c')
+		ft_set_char(ptr, val);
+	else if (type == 's')
+		*(char **)ptr = ft_strdup(val);
+}
+
 /**
  * @brief Inicializa múltiples variables de distintos tipos mediante argumentos
  *        variables.
@@ -58,8 +91,6 @@ void	ft_ftinit(int count, ...)
 	int		i;
 	void	*ptr;
 	char	*input;
-	char	*val;
-	char	type;
 
 	va_start(args, count);
 	i = 0;
@@ -67,16 +98,7 @@ void	ft_ftinit(int count, ...)
 	{
 		ptr = va_arg(args, void *);
 		input = va_arg(args, char *);
-		type = input[0];
-		val = input + 1;
-		if (type == 'i')
-			*(int *)ptr = ft_atoi(val);
-		else if (type == 'l')
-			*(long *)ptr = ft_atol(val);
-		else if (type == 'c')
-			*(char *)ptr = val[0];
-		else if (type == 's')
-			*(char **)ptr = ft_strdup(val);
+		ft_apply_spec(ptr, input);
 	}
 	va_end(args);
 }
