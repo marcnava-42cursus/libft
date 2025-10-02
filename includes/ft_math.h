@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 03:24:34 by marcnava          #+#    #+#             */
-/*   Updated: 2025/10/01 18:09:45 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/10/02 12:43:23 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define FT_MATH_H
 
 # include <stdint.h>
+# include <limits.h>
+# include <stdarg.h>
+# include "ft_types.h"
 
 # define FT_E			2.7182818284590452354	/* e */
 # define FT_LOG2E		1.4426950408889634074	/* log_2 e */
@@ -29,12 +32,12 @@
 # define FT_SQRT2		1.41421356237309504880	/* sqrt(2) */
 # define FT_SQRT1_2		0.70710678118654752440	/* 1/sqrt(2) */
 
-uint32_t	ft_abs(int nbr);
-int			ft_avg(int count, ...);
-int			ft_pow2(int base);
-int			ft_pown(int base, int exp);
-int			ft_sum(int count, ...);
-int			ft_logn(int base, int nbr);
-int			ft_log10(int nbr);
+t_uint	ft_abs(t_int nbr);
+t_int	ft_avg(t_int count, ...);
+t_int	ft_pow2(t_int base);
+t_int	ft_pown(t_int base, t_int exp);
+t_int	ft_sum(t_int count, ...);
+t_int	ft_logn(t_int base, t_int nbr);
+t_int	ft_log10(t_int nbr);
 
 #endif

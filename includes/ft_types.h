@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 18:50:15 by marcnava          #+#    #+#             */
-/*   Updated: 2025/10/02 12:29:02 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/10/02 12:41:35 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,25 +37,25 @@
 
 # ifdef FT_HAS_STDINT
 
-typedef int8_t			t_i8;
-typedef uint8_t			t_u8;
-typedef int16_t			t_i16;
-typedef uint16_t		t_u16;
-typedef int32_t			t_i32;
-typedef uint32_t		t_u32;
-typedef int64_t			t_i64;
-typedef uint64_t		t_u64;
+typedef int8_t			t_char;
+typedef uint8_t			t_uchar;
+typedef int16_t			t_short;
+typedef uint16_t		t_ushort;
+typedef int32_t			t_int;
+typedef uint32_t		t_uint;
+typedef int64_t			t_long;
+typedef uint64_t		t_ulong;
 
 # else
 
-typedef signed char		t_i8;
-typedef unsigned char	t_u8;
-typedef short			t_i16;
-typedef unsigned short	t_u16;
-typedef int				t_i32;
-typedef unsigned int	t_u32;
-typedef long			t_i64;
-typedef unsigned long	t_u64;
+typedef signed char		t_char;
+typedef unsigned char	t_uchar;
+typedef short			t_short;
+typedef unsigned short	t_ushort;
+typedef int				t_int2;
+typedef unsigned int	t_uint;
+typedef long			t_long;
+typedef unsigned long	t_ulong;
 
 # endif
 

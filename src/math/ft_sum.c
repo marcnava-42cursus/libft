@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 14:56:32 by marcnava          #+#    #+#             */
-/*   Updated: 2025/06/30 02:46:54 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/10/02 12:46:41 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@
  * @example
  * int result = ft_sum(3, 1, 2, 3); // result == 6
  */
-int	ft_sum(int count, ...)
+t_int	ft_sum(t_int count, ...)
 {
 	va_list	args;
-	int		sum;
-	int		i;
+	t_int		sum;
+	t_int		i;
 
 	if (count <= 0)
 		return (0);

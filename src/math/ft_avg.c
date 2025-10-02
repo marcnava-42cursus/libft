@@ -6,11 +6,11 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 14:40:39 by marcnava          #+#    #+#             */
-/*   Updated: 2025/06/30 02:47:19 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/10/02 12:44:19 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_math.h"
 
 /**
  * Calculates the average of a variable number of integer arguments.
@@ -24,11 +24,11 @@
  * Example usage:
  *     int avg = ft_avg(3, 10, 20, 30); // avg = 20
  */
-int	ft_avg(int count, ...)
+t_int	ft_avg(t_int count, ...)
 {
 	va_list	args;
-	int		sum;
-	int		i;
+	t_int	sum;
+	t_int	i;
 
 	if (count <= 0)
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 02:02:56 by marcnava          #+#    #+#             */
-/*   Updated: 2025/06/30 02:06:10 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/10/02 12:45:44 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  *
  * This function uses recursion to compute the factorial.
  */
-int	ft_fact(int nbr)
+t_int	ft_fact(t_int nbr)
 {
 	if (nbr < 0)
 		return (0);

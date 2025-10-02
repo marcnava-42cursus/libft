@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 23:09:35 by marcnava          #+#    #+#             */
-/*   Updated: 2025/06/29 23:12:35 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/10/02 12:45:54 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  * @param nbr The integer whose base-10 logarithm is to be calculated.
  * @return The base-10 logarithm of `nbr`.
  */
-int	ft_log10(int nbr)
+t_int	ft_log10(t_int nbr)
 {
 	return (ft_logn(10, nbr));
 }

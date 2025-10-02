@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 16:58:16 by marcnava          #+#    #+#             */
-/*   Updated: 2025/06/30 02:45:44 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/10/02 12:46:08 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
  * @return The integer part of log_base(nbr). Returns 0 if base <= 1 or
  *         nbr <= 0.
  */
-int	ft_logn(int base, int nbr)
+t_int	ft_logn(t_int base, t_int nbr)
 {
-	int	result;
+	t_int	result;
 
 	result = 0;
 	if (base <= 1 || nbr <= 0)

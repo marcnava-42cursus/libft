@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 15:00:09 by marcnava          #+#    #+#             */
-/*   Updated: 2025/06/30 02:46:08 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/10/02 12:46:18 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  * @param base The integer value to be squared.
  * @return The square of the input integer (base * base).
  */
-int	ft_pow2(int base)
+t_int	ft_pow2(t_int base)
 {
 	return (base * base);
 }

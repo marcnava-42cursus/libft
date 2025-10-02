@@ -6,7 +6,7 @@
 /*   By: marcnava <marcnava@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 16:41:42 by marcnava          #+#    #+#             */
-/*   Updated: 2025/06/30 02:46:26 by marcnava         ###   ########.fr       */
+/*   Updated: 2025/10/02 12:46:28 by marcnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
  * Returns the value of base raised to the power of exp (base^exp).
  * If exp is negative, returns 0.
  */
-int	ft_pown(int base, int exp)
+t_int	ft_pown(t_int base, t_int exp)
 {
-	int	i;
-	int	result;
+	t_int	i;
+	t_int	result;
 
 	if (exp < 0)
 		return (0);
